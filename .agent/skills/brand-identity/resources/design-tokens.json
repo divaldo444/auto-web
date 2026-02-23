@@ -1,0 +1,97 @@
+{
+  "brand": "Garazen Auto",
+  "colors": {
+    "midnight": {
+      "hex": "#05070B",
+      "usage": "Primary background (Midnight Chassis)"
+    },
+    "steel": {
+      "hex": "#0C304A",
+      "usage": "Secondary background, cards (Steel Navy)"
+    },
+    "electric": {
+      "hex": "#2E6D9D",
+      "usage": "Accent, CTAs, links (Electric Steel)"
+    },
+    "silver": {
+      "hex": "#E5EDF5",
+      "usage": "Primary text (Chrome Silver)"
+    },
+    "gunmetal": {
+      "hex": "#94A3B8",
+      "usage": "Muted text, secondary labels (lighter than brand spec #6F7A86 for better screen contrast)"
+    },
+    "amber": {
+      "hex": "#FFB74D",
+      "usage": "Warnings, in-progress states (Signal Amber)"
+    },
+    "alert": {
+      "hex": "#E53935",
+      "usage": "Error states (Alert Red)"
+    },
+    "success": {
+      "hex": "#2ECC71",
+      "usage": "Success states, availability (Diagnostic Green)"
+    },
+    "brandBlue": {
+      "hex": "#0369A1",
+      "usage": "Logo gradient endpoint"
+    }
+  },
+  "typography": {
+    "sans": {
+      "family": "Inter",
+      "weights": [
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "usage": "Body text, buttons, labels, UI"
+    },
+    "headline": {
+      "family": "Sora",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "usage": "Headlines, hero text, section titles"
+    }
+  },
+  "logo": {
+    "icon": "/logo-icon.png",
+    "full": "/logo.png",
+    "text": "/garazen-auto-text.png",
+    "description": "3D metallic hexagonal G with integrated wrench and garage door silhouette",
+    "textTreatment": {
+      "GARAZEN": "Metallic gradient (silver-to-blue), wide letter-spacing 0.15em, font-weight 800",
+      "AUTO": "Muted blue, tracking 0.35em, flanked by decorative horizontal lines"
+    },
+    "clearSpace": "Height of G symbol on all sides",
+    "minSize": {
+      "desktop": "32px tall",
+      "mobile": "24px tall"
+    }
+  },
+  "borders": {
+    "radius": {
+      "sm": "0.5rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem"
+    },
+    "default": "1px solid rgba(255, 255, 255, 0.05)"
+  },
+  "effects": {
+    "glassPanelBg": "rgba(12, 48, 74, 0.3)",
+    "glassPanelBlur": "12px",
+    "hoverGlow": "0 8px 30px -10px rgba(46, 109, 157, 0.4)",
+    "cardHover": "0 20px 40px -10px rgba(46, 109, 157, 0.2)"
+  }
+}
