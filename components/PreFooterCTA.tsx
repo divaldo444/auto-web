@@ -56,9 +56,17 @@ export const PreFooterCTA: React.FC = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center lg:justify-start">
                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                        <Button size="lg" withBeam onClick={() => window.location.href = 'tel:5144215555'} className="w-full">
-                           {t('preCta.ctaSecondary')} <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
+                        <a
+                           href="tel:5144215555"
+                           className="relative inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-midnight disabled:opacity-50 disabled:cursor-not-allowed uppercase font-sans cursor-pointer bg-steel text-silver hover:bg-electric shadow-lg shadow-black/40 px-8 py-4 text-base w-full group"
+                        >
+                           <span className="absolute inset-0 w-full h-full overflow-hidden rounded-lg pointer-events-none">
+                              <span className="absolute top-0 left-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-beam" />
+                           </span>
+                           <span className="relative z-10 flex items-center gap-2">
+                              {t('preCta.ctaSecondary')} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                           </span>
+                        </a>
                      </motion.div>
                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                         <Button variant="outline" size="lg" onClick={() => window.open(MAPS_URL, '_blank')} className="w-full">

@@ -9,7 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
   const { openBooking } = useBooking();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-midnight">
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-success">Zen</span>.
             </h1>
 
-            <p className="text-base lg:text-lg text-gunmetal mb-8 leading-relaxed max-w-lg font-medium">
+            <p className={`text-base lg:text-lg text-gunmetal leading-relaxed max-w-lg font-medium pl-4 pr-4 lg:p-0 ${language === 'fr' ? 'mt-8 lg:mt-0 mb-8' : 'mb-8'}`}>
               {t('hero.subtext')}
             </p>
 

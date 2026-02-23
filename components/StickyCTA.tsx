@@ -28,13 +28,12 @@ export const StickyCTA: React.FC = () => {
                     className="fixed bottom-0 left-0 right-0 z-40 bg-midnight/90 backdrop-blur-lg border-t border-white/10 p-4 md:hidden shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)]"
                 >
                     <div className="flex gap-3">
-                        <Button
-                            variant="primary"
-                            className="flex-1 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white border-0 shadow-lg shadow-green-900/20 whitespace-nowrap"
-                            onClick={() => window.location.href = 'tel:5144215555'}
+                        <a
+                            href="tel:5144215555"
+                            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold tracking-wide transition-all duration-300 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-midnight bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white shadow-lg shadow-green-900/20 whitespace-nowrap uppercase cursor-pointer"
                         >
-                            <Phone className="w-4 h-4 mr-2" /> {t('stickyCta.call')}
-                        </Button>
+                            <Phone className="w-4 h-4" /> {t('stickyCta.call')}
+                        </a>
                         <Button variant="primary" className="flex-1 whitespace-nowrap" withBeam onClick={openBooking}>
                             <Calendar className="w-4 h-4 mr-2" /> {t('stickyCta.button')}
                         </Button>

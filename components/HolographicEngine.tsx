@@ -65,29 +65,29 @@ export const HolographicEngine: React.FC<HolographicEngineProps> = ({ mobileLayo
                     </g>
 
                     {/* === LAYER 2: HOLOGRAPHIC REVEAL (Active scan, bright blue) === */}
-                    <g mask={`url(#wireframe-mask-${uniqueId})`} className="stroke-electric fill-none" strokeWidth="1.5" filter={`url(#glow-soft-${uniqueId})`}>
+                    <g mask={mobileLayout ? undefined : `url(#wireframe-mask-${uniqueId})`} className={`stroke-electric fill-none ${mobileLayout ? 'opacity-40' : ''}`} strokeWidth="1.5" filter={mobileLayout ? undefined : `url(#glow-soft-${uniqueId})`}>
                         <ModernSUV />
                         <InternalComponents detailed />
                     </g>
 
                     {/* === LAYER 3: BODY VOLUME (Faint fill for presence) === */}
-                    <g mask={`url(#wireframe-mask-${uniqueId})`} className="fill-electric/[0.03] stroke-none">
+                    <g mask={mobileLayout ? undefined : `url(#wireframe-mask-${uniqueId})`} className="fill-electric/[0.03] stroke-none">
                         <ModernSUVFill />
                     </g>
 
                     {/* === SCANNER BEAM (HORIZONTAL RESTORED - NO WHITE LINES) === */}
-                    <motion.g
-                        animate={{ x: [-400, 1200] }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                    >
-                        {/* Just the Glow/Trail - No hard lines */}
-                        <rect x="-400" y="0" width="400" height="700" fill={`url(#scan-beam-h-${uniqueId})`} opacity="0.4" /> {/* Reduced opacity to 0.4 to match refined subtleness */}
+                    {!mobileLayout && (
+                        <motion.g
+                            animate={{ x: [-400, 1200] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                        >
+                            {/* Just the Glow/Trail - No hard lines */}
+                            <rect x="-400" y="0" width="400" height="700" fill={`url(#scan-beam-h-${uniqueId})`} opacity="0.4" />
 
-                        {/* Subtle Leading Edge Glow (No hard white line) */}
-                        <line x1="0" y1="0" x2="0" y2="700" stroke="#38BDF8" strokeWidth="2" strokeOpacity="0.5" className="blur-sm" />
-
-                        {/* Particles REMOVED per user request */}
-                    </motion.g>
+                            {/* Subtle Leading Edge Glow (No hard white line) */}
+                            <line x1="0" y1="0" x2="0" y2="700" stroke="#38BDF8" strokeWidth="2" strokeOpacity="0.5" className="blur-sm" />
+                        </motion.g>
+                    )}
 
                     {/* === HOTSPOTS === */}
 
