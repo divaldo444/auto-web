@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Garazen Auto - Poster 6x6</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Sora:wght@800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #05070B;
+            --steel: #0C304A;
+            --electric: #2E6D9D;
+            --silver: #E5EDF5;
+            --amber: #FFB74D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            /* Prevent screen scroll if possible for preview */
+        }
+
+        /* 1:1 Canvas */
+        .canvas {
+            container-type: inline-size;
+            position: relative;
+            width: 100%;
+            max-width: 100vh;
+            /* Keeps it square on landscape screens */
+            max-height: 100vw;
+            /* Keeps it square on portrait screens */
+            aspect-ratio: 1 / 1;
+            background: radial-gradient(circle at 50% 30%, var(--steel) 0%, var(--midnight) 70%);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        @media print {
+            @page {
+                size: 72in 72in;
+                margin: 0;
+            }
+
+            body {
+                background-color: transparent;
+                display: block;
+                min-height: auto;
+                overflow: visible;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .canvas {
+                max-width: none;
+                max-height: none;
+                width: 72in;
+                height: 72in;
+                box-shadow: none;
+            }
+        }
+
+        /* Subtle grid background overlay */
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 4cqw 4cqw;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Content Wrapper - Using flex to distribute space evenly */
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5cqw 0 6cqw 0;
+            /* Reduced padding to give more room for logo/text */
+        }
+
+        /* --- LOGO SECTION --- */
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 1cqw;
+        }
+
+        .logo-icon {
+            width: 43cqw;
+            /* Massive icon so it pops out */
+            object-fit: contain;
+            filter: drop-shadow(0 2cqw 4cqw rgba(0, 0, 0, 0.8)) drop-shadow(0 0 5cqw rgba(46, 109, 157, 0.4));
+            transform: translateX(-1.8cqw);
+            /* Optically center over the 'A' */
+        }
+
+        .logo-text {
+            width: 63cqw;
+            /* Wide text */
+            margin-top: -3cqw;
+            /* Pull text up into the icon slightly */
+            object-fit: contain;
+            filter: drop-shadow(0 1cqw 2cqw rgba(0, 0, 0, 0.9));
+        }
+
+        /* --- POSTER TEXT --- */
+        .text-group {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5cqw;
+            margin-bottom: 2cqw;
+        }
+
+        .headline {
+            font-family: 'Sora', sans-serif;
+            font-weight: 900;
+            font-size: 6.5cqw;
+            /* Made smaller per user request */
+            line-height: 1.1;
+            color: var(--silver);
+            text-transform: uppercase;
+            text-shadow: 0 1cqw 3cqw rgba(0, 0, 0, 0.9);
+        }
+
+        .subhead {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 3.2cqw;
+            /* Slightly smaller to match */
+            color: var(--amber);
+            /* Beautiful amber accent */
+            text-transform: uppercase;
+            letter-spacing: 0.3cqw;
+            text-shadow: 0 0.5cqw 1.5cqw rgba(0, 0, 0, 0.9);
+        }
+
+        /* --- CTA SECTION --- */
+        .cta-group {
+            width: 85cqw;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2cqw;
+        }
+
+        .phone-box {
+            background: linear-gradient(180deg, rgba(46, 109, 157, 0.2) 0%, rgba(5, 7, 11, 0.8) 100%);
+            border: 0.3cqw solid var(--electric);
+            border-radius: 2cqw;
+            padding: 1.5cqw 5cqw;
+            backdrop-filter: blur(2cqw);
+            box-shadow: 0 2cqw 5cqw rgba(0, 0, 0, 0.8), inset 0 0 2cqw rgba(46, 109, 157, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-text {
+            font-family: 'Sora', sans-serif;
+            font-weight: 900;
+            font-size: 7cqw;
+            /* Slightly smaller phone size */
+            color: #FFFFFF;
+            letter-spacing: 0.2cqw;
+            text-shadow: 0 0 4cqw rgba(46, 109, 157, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="canvas">
+        <div class="grid-overlay"></div>
+
+        <div class="content">
+            <!-- 1. Huge Logos at top -->
+            <div class="logo-group">
+                <img src="logo-icon.png" alt="Garazen Icon" class="logo-icon">
+                <img src="logo-text.png" alt="GARAZEN AUTO" class="logo-text">
+            </div>
+
+            <!-- 2. Main details -->
+            <div class="text-group">
+                <div class="headline">MÉCANIQUE<br>GÉNÉRALE</div>
+                <div class="subhead">SERVICE AUTO ET PNEUS</div>
+            </div>
+
+            <!-- 3. Final call to action -->
+            <div class="cta-group">
+                <div class="phone-box">
+                    <div class="phone-text">514-421-5555</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
