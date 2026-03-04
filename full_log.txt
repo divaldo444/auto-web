@@ -1,0 +1,5 @@
+dcd776d feat(poster): finalize 6x6 poster design with optimal aspect ratio and optical alignment for print
+6f8e1c0 Fix mobile SVG mask lag, adjust FR hero spacing, and use native a tags for tel links to bypass Safari blocking
+8e9dc3e Optimize mobile performance: switch from Tailwind CDN to PostCSS build step and remove importmap
+eae413c Fix logo paths by moving images to public directory
+37fea0e Initial commit for Garazen Auto (Brand + UI/UX ready)

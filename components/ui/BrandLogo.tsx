@@ -18,7 +18,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ className, hideText = fals
         />
       </div>
 
-      {/* GARAZEN AUTO text — nudged down so "GARAZEN" aligns with G icon center */}
+      {/* GARAZEN AUTO text */}
       {!hideText && (
         <div className="relative flex-shrink-0 translate-y-[5px]">
           <img

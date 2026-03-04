@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Mobile: Stacked & Big */}
-            <h1 className="lg:hidden flex flex-col items-center font-serif font-bold text-silver mb-8 leading-tight">
+            <h1 className="lg:hidden flex flex-col items-center font-serif font-bold text-silver mb-4 leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,11 +111,11 @@ export const Hero: React.FC = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-success">Zen</span>.
             </h1>
 
-            <p className={`text-base lg:text-lg text-gunmetal leading-relaxed max-w-lg font-medium pl-4 pr-4 lg:p-0 ${language === 'fr' ? 'mt-8 lg:mt-0 mb-8' : 'mb-8'}`}>
+            <p className={`text-base lg:text-lg text-gunmetal leading-relaxed max-w-lg font-medium pl-4 pr-4 lg:p-0 ${language === 'fr' ? 'mt-4 lg:mt-0 mb-4 lg:mb-8' : 'mb-4 lg:mb-8'}`}>
               {t('hero.subtext')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-6">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto mt-2 lg:mt-6">
               <Button size="lg" withBeam onClick={openBooking} className="w-full sm:w-auto px-8 py-6 text-base font-semibold shadow-xl shadow-electric/20 group">
                 {t('hero.ctaPrimary')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
